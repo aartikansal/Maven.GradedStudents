@@ -10,11 +10,11 @@ public class Student {
     // ADDED BY AARTI ON 02/24
 
     //a collection of characters representative of a first name.
-    String firstName = "";
+    private String firstName = "";
     // a collection of characters representative of a last name.
-    String lastName = "";
+    private String lastName = "";
     //a dynamic collection of decimal values representative of test scores.
-    ArrayList<Double> examScores;
+    private ArrayList<Double> examScores;
 
     public Student(String firstName, String lastName, Double[] examScores) {
         this.firstName = firstName;
@@ -40,26 +40,43 @@ public class Student {
         return lastName;
     }
 
-    public int getNumberOfExamsTaken()
-    {
+    public int getNumberOfExamsTaken() {
         return examScores.size();
     }
 
-    public String getExamScores(){
+
+    public String getExamScores() {
         String scores = "Exam Scores:\n";
-        for (int i = 0; i < examScores.size(); i++){
-            scores += " \tExam " + (i+1) + " -> " + examScores.get(i).intValue() + "\n";
+        for (int i = 0; i < examScores.size(); i++) {
+            scores += " \tExam " + (i + 1) + " -> " + examScores.get(i).intValue() + "\n";
         }
         return scores;
     }
 
-    public void addExamScore(Double eScore){
+    public void addExamScore(Double eScore) {
         examScores.add(eScore);
     }
 
-    public void setExamScores(int examNumber, double newScore) {
-        examScores.remove(examNumber-1);
-        examScores.add(examNumber-1, newScore);
+    public void setExamScore(int examNumber, double newScore) {
+        examScores.remove(examNumber - 1);
+        examScores.add(examNumber - 1, newScore);
+    }
+
+    public double getAverageExamScore(){
+        Double examScore=0.0;
+        Double average=0.0;
+        for(int i = 0; i < examScores.size(); i++){
+            examScore += examScores.get(i);
+            average = examScore / examScores.size();
+        }
+        return average;
+    }
+
+    public String toString(){
+        String str = "Student Name: " + firstName + " " + lastName + "\n" +
+                "Average Score: " + getAverageExamScore() + "\n" +
+                getExamScores();
+        return str;
     }
 
 

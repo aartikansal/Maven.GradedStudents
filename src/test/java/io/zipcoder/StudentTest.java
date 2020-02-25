@@ -36,4 +36,52 @@ public class StudentTest {
         System.out.println(output);
 
     }
+
+    @Test
+    public void setExamScoreTest(){
+        // : Given
+        String firstName = "Leon";
+        String lastName = "Hunter";
+        Double[] examScores = { 100.0 };
+        Student student = new Student(firstName, lastName, examScores);
+// When
+        student.setExamScore(1, 150.0);
+        String output = student.getExamScores();
+// Then
+        System.out.println(output);
+    }
+
+    @Test
+    public void getAverageExamScoreTest() {
+
+        // : Given
+        String firstName = "Leon";
+        String lastName = "Hunter";
+        Double[] examScores = {100.0, 150.0, 250.0, 0.0};
+        Student student = new Student(firstName, lastName, examScores);
+
+        // When
+        double output = student.getAverageExamScore();
+
+        // Then
+        System.out.println(output);
+    }
+
+    @Test
+    public void toStringTest()
+    {
+        // : Given
+        String firstName = "Leon";
+        String lastName = "Hunter";
+        Double[] examScores = { 100.0, 150.0, 250.0, 0.0 };
+        Student student = new Student(firstName, lastName, examScores);
+
+        // When
+        String output = student.toString();
+
+        // Then
+        System.out.println(output);
+
+    }
+
 }
