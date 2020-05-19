@@ -15,7 +15,6 @@ public class Classroom {
     }
 
     public Classroom() {
-        //students.
         this(30);
     }
 

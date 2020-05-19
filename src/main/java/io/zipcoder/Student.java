@@ -9,9 +9,9 @@ public class Student {
 
     // ADDED BY AARTI ON 02/24
 
-    //a collection of characters representative of a first name.
+    //a collection of characters representative of  first name.
     private String firstName = "";
-    // a collection of characters representative of a last name.
+    // a collection of characters representative of  last name.
     private String lastName = "";
     //a dynamic collection of decimal values representative of test scores.
     private ArrayList<Double> examScores;
@@ -21,27 +21,6 @@ public class Student {
         this.lastName = lastName;
         this.examScores = new ArrayList<>(Arrays.asList(examScores));
 
-    }
-
-
-    public void setFirstName(String fName) {
-        this.firstName = fName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setLastName(String LName) {
-        this.lastName = LName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public int getNumberOfExamsTaken() {
-        return examScores.size();
     }
 
 
